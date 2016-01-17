@@ -1,0 +1,1 @@
+**ALWAYS** build the solution **FIRST** so itextsharp.dll can be found
