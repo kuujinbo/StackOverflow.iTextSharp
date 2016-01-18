@@ -3,6 +3,7 @@ using kuujinbo.StackOverflow.iTextSharp.ProgramCode;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.ColumnTexts;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Forms;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass;
 
 namespace kuujinbo.StackOverflow.iTextSharp
@@ -11,8 +12,9 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            CreateInputPdfs.CreateFourTestPdfs();
-            new EveryOther().Go();
+            new AddBase64Image().Go();
+            // CreateInputPdfs.CreateFourTestPdfs();
+            // new EveryOther().Go();
             // new SetSplitCharacter().Go();
             // ReduceFontCreatePDF();
             

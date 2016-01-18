@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 namespace kuujinbo.StackOverflow.iTextSharp.Helpers
@@ -22,6 +23,20 @@ namespace kuujinbo.StackOverflow.iTextSharp.Helpers
         public static PdfReader GetInputReader(string fileName)
         {
             return new PdfReader(GetInputFilePath(fileName));
+        }
+
+        public static PdfReader GetTestReader()
+        {
+            using (var stream = new MemoryStream())
+            {
+                using (Document document = new Document())
+                {
+                    PdfWriter.GetInstance(document, stream);
+                    document.Open();
+                    document.Add(new Phrase("A PDF used for testing"));
+                }
+                return new PdfReader(stream.ToArray());
+            }
         }
         #endregion
 

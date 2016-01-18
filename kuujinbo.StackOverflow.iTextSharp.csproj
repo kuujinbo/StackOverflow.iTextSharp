@@ -54,6 +54,7 @@
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
     <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
     <Compile Include="ProgramCode\Forms\UsageRightsCheckbox.cs" />
+    <Compile Include="ProgramCode\Images\AddBase64Image.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
