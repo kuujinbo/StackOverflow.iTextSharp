@@ -1,7 +1,9 @@
-﻿using kuujinbo.StackOverflow.iTextSharp.Helpers;
+﻿using kuujinbo.StackOverflow.iTextSharp._scratchSpace;
+using kuujinbo.StackOverflow.iTextSharp.Helpers;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.ColumnTexts;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Fonts;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Forms;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass;
@@ -12,12 +14,14 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new AddBase64Image().Go();
+            new FitTextInField().Go();
+            // new AcroFont().Go(4f);
+            // new ChineseSetSplitCharacter().Go();
+            // new AddBase64Image().Go();
             // CreateInputPdfs.CreateFourTestPdfs();
             // new EveryOther().Go();
             // new SetSplitCharacter().Go();
             // ReduceFontCreatePDF();
-            
         }
 
         static void ReduceFontCreatePDF()
