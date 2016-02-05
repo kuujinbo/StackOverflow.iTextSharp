@@ -16,14 +16,6 @@ namespace kuujinbo.StackOverflow.iTextSharp
         static void Main(string[] args)
         {
             new EndTag().Go();
-            // new FitTextInField().Go();
-            // new AcroFont().Go(4f);
-            // new ChineseSetSplitCharacter().Go();
-            // new AddBase64Image().Go();
-            // CreateInputPdfs.CreateFourTestPdfs();
-            // new EveryOther().Go();
-            // new SetSplitCharacter().Go();
-            // ReduceFontCreatePDF();
         }
 
         static void ReduceFontCreatePDF()
@@ -33,7 +25,6 @@ namespace kuujinbo.StackOverflow.iTextSharp
             var r = new ReduceFont();
             while (r.CreatePDF(fontStart))
             {
-                // Console.WriteLine(fontStart);
                 fontStart--;
             }
         }

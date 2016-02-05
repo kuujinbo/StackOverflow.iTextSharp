@@ -1,15 +1,12 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
-using iTextSharp.text.xml;
 using iTextSharp.tool.xml;
 
 namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 {
     public class EndTag
     {
-
         public const string HTML = @"
 <div class='col-xs-12 GPAMainForm'>
   <div class='col-xs-10 col-xs-offset-1'>
@@ -35,12 +32,9 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 </div>
 ";
 
-
-
         public void Go()
         {
             var outputFile = Helpers.IO.GetClassOutputPath(this);
-
             StringReader xmlSnippet = new StringReader(HTML);
 
             using (FileStream stream = new FileStream(
@@ -48,7 +42,6 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
                 FileMode.Create,
                 FileAccess.Write))
             {
-
                 using (Document document = new Document())
                 {
                     PdfWriter writer = PdfWriter.GetInstance(

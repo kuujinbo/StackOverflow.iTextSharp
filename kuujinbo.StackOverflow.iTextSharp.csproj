@@ -68,6 +68,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_scratchSpace\AcroFont.cs" />
     <Compile Include="_scratchSpace\FitTextInField.cs" />
+    <Compile Include="_scratchSpace\FoundAtSO\HighLightTextLocation.cs" />
+    <Compile Include="_scratchSpace\HightLightText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
