@@ -1,7 +1,9 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
+using HtmlAgilityPack;
 
 namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 {
@@ -18,8 +20,10 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
               <label class='control-label'>Company Name</label>
             </td>
             <td class='border'>
-               <input type='text' />
+<!-- after edit -->
+<input name='ctl00$MainContent$TextBox2' id='MainContent_TextBox2' type='text'>
                <!--
+               <input type='text' />
                If I remove input tag, pdf gets generated else it show error like:
                `Invalid nested tag td found, expected closing tag input`
                -->
@@ -31,26 +35,40 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
   </div>
 </div>
 ";
+        // been a while; forgot how **BROKEN** server control markup can be
+        string FixBrokenServerControlMarkup(string brokenHtml)
+        {
+            HtmlDocument hDocument = new HtmlDocument()
+            {
+                OptionOutputAsXml = true,
+                OptionAutoCloseOnEnd = true
+            };
+            hDocument.LoadHtml(brokenHtml);
+            return hDocument.DocumentNode.WriteTo();
+        }
 
         public void Go()
         {
             var outputFile = Helpers.IO.GetClassOutputPath(this);
-            StringReader xmlSnippet = new StringReader(HTML);
+            var fixedHtml = FixBrokenServerControlMarkup(HTML);
 
-            using (FileStream stream = new FileStream(
-                outputFile,
-                FileMode.Create,
-                FileAccess.Write))
+            using (var xmlSnippet = new StringReader(fixedHtml))
             {
-                using (Document document = new Document())
+                using (FileStream stream = new FileStream(
+                    outputFile,
+                    FileMode.Create,
+                    FileAccess.Write))
                 {
-                    PdfWriter writer = PdfWriter.GetInstance(
-                      document, stream
-                    );
-                    document.Open();
-                    XMLWorkerHelper.GetInstance().ParseXHtml(
-                      writer, document, xmlSnippet
-                    );
+                    using (var document = new Document())
+                    {
+                        PdfWriter writer = PdfWriter.GetInstance(
+                          document, stream
+                        );
+                        document.Open();
+                        XMLWorkerHelper.GetInstance().ParseXHtml(
+                          writer, document, xmlSnippet
+                        );
+                    }
                 }
             }
         }
