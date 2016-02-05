@@ -7,7 +7,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 {
     public class EndTag
     {
-        public const string HTML = @"
+        const string HTML = @"
 <div class='col-xs-12 GPAMainForm'>
   <div class='col-xs-10 col-xs-offset-1'>
     <div style='border: 1px double black; padding: 2px'>
