@@ -7,6 +7,7 @@ using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Fonts;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Forms;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers;
 
 namespace kuujinbo.StackOverflow.iTextSharp
 {
@@ -14,7 +15,8 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new FitTextInField().Go();
+            new EndTag().Go();
+            // new FitTextInField().Go();
             // new AcroFont().Go(4f);
             // new ChineseSetSplitCharacter().Go();
             // new AddBase64Image().Go();
