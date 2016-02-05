@@ -1,0 +1,70 @@
+﻿using System;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using HtmlAgilityPack;
+
+// http://stackoverflow.com/questions/35216731
+namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+{
+    public class RemoveImageByClass
+    {
+        const string HTML = @"
+<div>
+    <div>
+        <img src='somepath/desktop.jpg' class='img-desktop'>Desktop</img>
+        <img src='somepath/mobile.jpg' class='img-mobile'>Mobile</img>
+    </div>
+</div>
+        ";
+
+        string RemoveImage(string htmlToParse)
+        {
+            var hDocument = new HtmlDocument()
+            {
+                OptionWriteEmptyNodes = true,
+                OptionAutoCloseOnEnd = true
+            };
+            hDocument.LoadHtml(htmlToParse);
+            var root = hDocument.DocumentNode;
+            var imagesDesktop = hDocument.DocumentNode.SelectNodes("//img[@class='img-desktop']"); 
+            foreach (var image in imagesDesktop)
+            {
+                var imageText = image.NextSibling;
+                imageText.Remove();
+                image.RemoveAll();
+                image.Remove();
+            }
+            return hDocument.DocumentNode.WriteTo();
+        }
+
+        public void Go()
+        {
+            var outputFile = Helpers.IO.GetClassOutputPath(this);
+            var parsedHtml = RemoveImage(HTML);
+
+            using (var xmlSnippet = new StringReader(parsedHtml))
+            {
+                using (FileStream stream = new FileStream(
+                    outputFile,
+                    FileMode.Create,
+                    FileAccess.Write))
+                {
+                    using (var document = new Document())
+                    {
+                        PdfWriter writer = PdfWriter.GetInstance(
+                          document, stream
+                        );
+                        document.Open();
+                        XMLWorkerHelper.GetInstance().ParseXHtml(
+                          writer, document, xmlSnippet
+                        );
+                    }
+                }
+            }
+        }
+
+
+    }
+}

@@ -15,7 +15,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new EndTag().Go();
+            new RemoveImageByClass().Go();
         }
 
         static void ReduceFontCreatePDF()
