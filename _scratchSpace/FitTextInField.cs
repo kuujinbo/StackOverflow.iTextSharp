@@ -22,7 +22,8 @@ namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace
                 var delimeter = Delimeter.ToString();
                 var splitter = new char[] { Delimeter };
                 var split = value.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
-                Console.WriteLine("START: {0}\n", string.Join(delimeter, split.ToArray()));
+                var paddedWidth = fieldWidth - Font.GetWidthPoint("0", FontSize) * 2;
+                Console.WriteLine("TEST STRING: {0}\n", string.Join(delimeter, split.ToArray()));
 
                 fits = string.Empty;
                 overflow = string.Empty;
@@ -32,7 +33,7 @@ namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace
                 {
                     string testString = string.Join(delimeter.ToString(), split.Take(++start).ToArray());
                     var testWidth = Font.GetWidthPoint(testString, FontSize);
-                    if (fieldWidth < testWidth)
+                    if (paddedWidth < testWidth)
                     {
                         break;
                     }
@@ -55,7 +56,7 @@ namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace
                 testTextList.Add(string.Format("{0}[{1}]", testText, i));
             }
             var baseFont = BaseFont.CreateFont();
-            float testSize = 10f;
+            float testSize = 5f;
             char delimeter = ',';
             var testJoined = string.Join(delimeter.ToString(), testTextList.ToArray());
 
