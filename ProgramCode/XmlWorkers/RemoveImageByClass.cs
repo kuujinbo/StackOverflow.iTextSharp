@@ -28,15 +28,14 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
             };
             hDocument.LoadHtml(htmlToParse);
             var root = hDocument.DocumentNode;
-            var imagesDesktop = hDocument.DocumentNode.SelectNodes("//img[@class='img-desktop']"); 
+            var imagesDesktop = root.SelectNodes("//img[@class='img-desktop']"); 
             foreach (var image in imagesDesktop)
             {
                 var imageText = image.NextSibling;
                 imageText.Remove();
-                image.RemoveAll();
                 image.Remove();
             }
-            return hDocument.DocumentNode.WriteTo();
+            return root.WriteTo();
         }
 
         public void Go()
