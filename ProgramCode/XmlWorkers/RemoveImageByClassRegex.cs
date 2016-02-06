@@ -10,11 +10,11 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 <div>
     <p class='img-desktop'>Paragraph</p>
     <div>
-        <img src='somepath/desktop.jpg' class='img-desktop'>Desktop</img>
+        <img class='img-desktop"" src='somepath/desktop.jpg'>Desktop</img>
         <img src='somepath/mobile.jpg' class='img-mobile'>Mobile</img>
     </div>
     <div>
-        <img src='somepath/desktop.jpg' alt='img-desktop' title='img-desktop' class=""img-desktop"">Desktop
+        <img src='somepath/desktop.jpg' alt='img-desktop' class=""img-desktop"" title='img-desktop'>Desktop
 </IMG>
         <img src='somepath/mobile.jpg' class='img-mobile'>Mobile</img>
     </div>
@@ -24,7 +24,8 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
         {
             var line = new String('=', 40);
             var regex = new Regex(
-                @"<img[^>]*class='?""?'?img-desktop""?[^>]*>.*?</img>",
+                // @"<img[^>]*class='?""?img-desktop""?'?[^>]*>.*?</img>",
+                @"<img[^>]*class=[^>]*img-desktop[^>]*>.*?</img>",
                 RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline
             );
 
