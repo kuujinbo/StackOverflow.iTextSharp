@@ -70,6 +70,7 @@
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
+    <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_scratchSpace\AcroFont.cs" />
     <Compile Include="_scratchSpace\FitTextInField.cs" />
