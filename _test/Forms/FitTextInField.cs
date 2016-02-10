@@ -11,19 +11,19 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 {
     public class FitTextInField
     {
-        class DelimetedFieldFitter
+        class DelimitedFieldFitter
         {
-            public char Delimeter { get; set; }
+            public char Delimiter { get; set; }
             public BaseFont Font { get; set; }
             public float FontSize { get; set; }
 
             public void FitTextInField(string value, float fieldWidth, out string fits, out string overflow)
             {
-                var delimeter = Delimeter.ToString();
-                var splitter = new char[] { Delimeter };
+                var delimiter = Delimiter.ToString();
+                var splitter = new char[] { Delimiter };
                 var split = value.Split(splitter, StringSplitOptions.RemoveEmptyEntries);
                 var paddedWidth = fieldWidth - Font.GetWidthPoint("0", FontSize) * 2;
-                Console.WriteLine("TEST STRING: {0}\n", string.Join(delimeter, split.ToArray()));
+                Console.WriteLine("TEST STRING: {0}\n", string.Join(delimiter, split.ToArray()));
 
                 fits = string.Empty;
                 overflow = string.Empty;
@@ -31,7 +31,7 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                 int start = 0;
                 foreach (var element in split)
                 {
-                    string testString = string.Join(delimeter.ToString(), split.Take(++start).ToArray());
+                    string testString = string.Join(delimiter.ToString(), split.Take(++start).ToArray());
                     var testWidth = Font.GetWidthPoint(testString, FontSize);
                     if (paddedWidth < testWidth)
                     {
@@ -39,8 +39,8 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                     }
                     ++count;
                 }
-                fits = string.Join(delimeter.ToString(), split.Take(count).ToArray());
-                overflow = string.Join(delimeter.ToString(), split.Skip(count).Take(split.Length - count).ToArray());
+                fits = string.Join(delimiter.ToString(), split.Take(count).ToArray());
+                overflow = string.Join(delimiter.ToString(), split.Skip(count).Take(split.Length - count).ToArray());
             }
         }
 
@@ -57,8 +57,8 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
             }
             var baseFont = BaseFont.CreateFont();
             float testSize = 5f;
-            char delimeter = ',';
-            var testJoined = string.Join(delimeter.ToString(), testTextList.ToArray());
+            char delimiter = ',';
+            var testJoined = string.Join(delimiter.ToString(), testTextList.ToArray());
 
             using (var reader = Helpers.IO.GetInputReader(fileName))
             {
@@ -76,9 +76,9 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                             testField, "textsize", testSize, null
                         );
 
-                        var ff = new DelimetedFieldFitter()
+                        var ff = new DelimitedFieldFitter()
                         {
-                            Delimeter = delimeter,
+                            Delimiter = delimiter,
                             Font = baseFont,
                             FontSize = testSize
                         };

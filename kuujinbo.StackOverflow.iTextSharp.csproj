@@ -84,7 +84,6 @@
     <None Include="PowerShell\mergePdfs.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="_scratchSpace\FoundAtSO\" />
     <Folder Include="__INPUT\" />
     <Folder Include="__OUTPUT\" />
   </ItemGroup>

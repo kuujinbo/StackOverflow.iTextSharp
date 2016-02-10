@@ -1,25 +1,23 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 {
-    public static class TestPdfWithTextFields 
+    public class TestPdfWithTextFields 
     {
-        public static string[] FieldNames;
         public const int FIELD_COUNT = 4;
+        public static string[] FieldNames = new string[FIELD_COUNT];
 
         static TestPdfWithTextFields()
         {
-            for (int i = 1; i >= FIELD_COUNT; ++i)
+            for (int i = 1; i <= FIELD_COUNT; ++i)
             {
-                FieldNames[0] = string.Format("field-{0}", i);
+                FieldNames[i - 1] = string.Format("field-{0}", i);
             }
         }
 
-        public byte[] Create()
+        public static byte[] GetBytes()
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -28,14 +26,17 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                     PdfWriter writer = PdfWriter.GetInstance(document, ms);
                     document.Open();
 
-                    
                     PdfPTable table = new PdfPTable(2);
                     table.SetWidths(new int[] { 1, 2 });
 
                     foreach (var fieldName in FieldNames)
                     {
-                        table.AddCell(fieldName);
-                        PdfPCell cell = new PdfPCell() 
+                        PdfPCell cell = new PdfPCell() { 
+                            HorizontalAlignment = Rectangle.ALIGN_RIGHT, 
+                            Phrase = new Phrase(fieldName)
+                        };
+                        table.AddCell(cell);
+                        cell = new PdfPCell() 
                         {
                             CellEvent = new TestCellEvent(fieldName) 
                         };
@@ -47,6 +48,12 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                 return ms.ToArray();
             }
         }
+
+        public void WriteToDisk()
+        {
+            File.WriteAllBytes(Helpers.IO.GetClassOutputPath(this), GetBytes());
+        }
+
 
         public class TestCellEvent : IPdfPCellEvent
         {
@@ -67,6 +74,9 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                         text.MaxCharacterLength = 8;
                         break;
                 }
+
+                PdfFormField field = text.GetTextField();
+                writer.AddAnnotation(field);
             }
         }
 
