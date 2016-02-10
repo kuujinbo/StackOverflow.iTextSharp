@@ -65,13 +65,13 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                 PdfWriter writer = canvases[0].PdfWriter;
                 TextField text = new TextField(writer, rectangle, _fieldName);
 
-                switch (!_fieldName.EndsWith("4"))
+                switch (_fieldName.EndsWith("4"))
                 {
-                    case false:
-                        text.FontSize = 0;
-                        break;
                     case true:
-                        text.MaxCharacterLength = 8;
+                        text.FontSize = 12f;
+                        break;
+                    default:
+                        text.FontSize = 0;
                         break;
                 }
 

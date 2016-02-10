@@ -10,67 +10,28 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 {
     public class AcroFont
     {
-        private AcroFields _formFields;
-
-        public bool IsAutoFont(string fieldName)
-        {
-            // need the dictionary field appearance
-            if (_formFields.GetFieldType(fieldName) == AcroFields.FIELD_TYPE_TEXT)
-            {
-                var pdfDictionary = _formFields.GetFieldItem(fieldName).GetMerged(0);
-                var pdfString = pdfDictionary.GetAsString(PdfName.DA);
-                if (pdfString != null)
-                {
-                    var daNames = AcroFields.SplitDAelements(pdfString.ToString());
-
-                    float size;
-                    if (daNames[1] != null && Single.TryParse(daNames[1].ToString(), out size))
-                    {
-                        Console.WriteLine("Form field [{0}] :: size {1}", fieldName, size);
-                    }
-
-                    return daNames[1] != null && daNames[1].ToString() == "0"
-                        ? true : false;
-                }
-            }
-
-            return false;
-        }
-
         public void Go(float fontSize)
         {
             var fileName = "text_fields.pdf";
             var readerPath = Helpers.IO.GetInputFilePath(fileName);
             var outputFile = Helpers.IO.GetClassOutputPath(this);
 
-            // Standard Type 1 (14) fonts
-            // BaseFont.HELVETICA
-            // BaseFont.COURIER
-            // BaseFont.TIMES_ROMAN
+
             var baseFont = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.WINANSI, false);
-            using (var reader = new PdfReader(readerPath))
+            using (var reader = new PdfReader(TestPdfWithTextFields.GetBytes()))
             {
                 using (var stream = new FileStream(outputFile, FileMode.Create))
                 {
                     using (var stamper = new PdfStamper(reader, stream))
                     {
-                        _formFields = stamper.AcroFields;
-                        foreach (var kv in _formFields.Fields)
-                        {
-                            Console.WriteLine(
-                                "{0} is auto font: {1}", 
-                                kv.Key, IsAutoFont(kv.Key)
-                            );
+                        var fields = stamper.AcroFields;
+                        new TextFieldFont().SetTemplateFont(
+                            fields, BaseFont.CreateFont(), fontSize
+                        );
 
-                            _formFields.SetFieldProperty(
-                                kv.Key, "textfont", baseFont, null
-                            );
-                            _formFields.SetFieldProperty(
-                                kv.Key, "textsize", fontSize, null
-                            );
-                            _formFields.SetField(
-                                kv.Key, string.Format("Form field name : [{0}]", kv.Key)
-                            );
+                        foreach (var name in TestPdfWithTextFields.FieldNames)
+                        {
+                            fields.SetField(name, name);
                         }
                     }
                 }

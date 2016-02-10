@@ -16,8 +16,8 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new TestPdfWithTextFields().WriteToDisk();
-            new AcroFont().Go(8f);
+            // new TestPdfWithTextFields().WriteToDisk();
+            new AcroFont().Go(10f);
             // new RemoveImageByClass().Go();
         }
 

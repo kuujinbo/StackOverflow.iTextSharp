@@ -75,6 +75,7 @@
     <Compile Include="_test\Forms\AcroFont.cs" />
     <Compile Include="_test\Forms\FitTextInField.cs" />
     <Compile Include="_test\Forms\TestPdfWithTextFields.cs" />
+    <Compile Include="_test\Forms\TextFieldFont.cs" />
     <Compile Include="_test\FoundAtSO\HighLightTextLocation.cs" />
     <Compile Include="_test\HightLightText.cs" />
   </ItemGroup>
