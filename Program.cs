@@ -1,4 +1,5 @@
-﻿using kuujinbo.StackOverflow.iTextSharp._scratchSpace;
+﻿using kuujinbo.StackOverflow.iTextSharp._test;
+using kuujinbo.StackOverflow.iTextSharp._test.Forms;
 using kuujinbo.StackOverflow.iTextSharp.Helpers;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks;
@@ -15,7 +16,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new RemoveImageByClassRegex().Go();
+            new AcroFont().Go(8f);
             // new RemoveImageByClass().Go();
         }
 

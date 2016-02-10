@@ -7,7 +7,7 @@ using iTextSharp.text.pdf;
 
 // fit a delimited string into a AcroField
 // TODO: single line / check if AcroFields.FIELD_TYPE_TEXT??
-namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace
+namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 {
     public class FitTextInField
     {

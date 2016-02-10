@@ -72,10 +72,11 @@
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_scratchSpace\AcroFont.cs" />
-    <Compile Include="_scratchSpace\FitTextInField.cs" />
-    <Compile Include="_scratchSpace\FoundAtSO\HighLightTextLocation.cs" />
-    <Compile Include="_scratchSpace\HightLightText.cs" />
+    <Compile Include="_test\Forms\AcroFont.cs" />
+    <Compile Include="_test\Forms\FitTextInField.cs" />
+    <Compile Include="_test\Forms\TestPdfWithTextFields.cs" />
+    <Compile Include="_test\FoundAtSO\HighLightTextLocation.cs" />
+    <Compile Include="_test\HightLightText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -83,6 +84,7 @@
     <None Include="PowerShell\mergePdfs.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="_scratchSpace\FoundAtSO\" />
     <Folder Include="__INPUT\" />
     <Folder Include="__OUTPUT\" />
   </ItemGroup>

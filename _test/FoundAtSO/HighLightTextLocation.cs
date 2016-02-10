@@ -8,7 +8,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
-namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace.FoundAtSO
+namespace kuujinbo.StackOverflow.iTextSharp._test.FoundAtSO
 {
     public class HighLightTextLocation : ITextExtractionStrategy
     {

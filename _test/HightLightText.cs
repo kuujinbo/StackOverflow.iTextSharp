@@ -4,9 +4,9 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
-using kuujinbo.StackOverflow.iTextSharp._scratchSpace.FoundAtSO;
+using kuujinbo.StackOverflow.iTextSharp._test.FoundAtSO;
 
-namespace kuujinbo.StackOverflow.iTextSharp._scratchSpace
+namespace kuujinbo.StackOverflow.iTextSharp._test
 {
     public class HightLightText
     {
