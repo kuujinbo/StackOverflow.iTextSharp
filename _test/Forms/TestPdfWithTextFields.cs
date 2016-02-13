@@ -57,7 +57,9 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 
         public class TestCellEvent : IPdfPCellEvent
         {
-            private string _fieldName;
+            string _fieldName;
+            BaseFont _default = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.WINANSI, false);
+
             public TestCellEvent(string fieldName) { _fieldName = fieldName; }
 
             public void CellLayout(PdfPCell cell, Rectangle rectangle, PdfContentByte[] canvases)
@@ -69,9 +71,11 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                 {
                     case true:
                         text.FontSize = 12f;
+                        text.Font = _default;
                         break;
                     default:
                         text.FontSize = 0;
+                        text.Font = _default;
                         break;
                 }
 
