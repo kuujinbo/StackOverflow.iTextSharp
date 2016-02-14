@@ -4,20 +4,24 @@ using iTextSharp.text.pdf;
 
 namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 {
-    public class TestPdfWithTextFields 
+    public class TextFieldsPdf
     {
+        public const float DEFAULT_SIZE = 12f;
         public const int FIELD_COUNT = 4;
         public static string[] FieldNames = new string[FIELD_COUNT];
+        public static readonly int AUTO_SIZE_FIELD = FIELD_COUNT - 1;
+        public static readonly string HELVETICA = BaseFont.HELVETICA;
+        public static readonly string COURIER_OBLIQUE = BaseFont.COURIER_OBLIQUE;
 
-        static TestPdfWithTextFields()
+        static TextFieldsPdf()
         {
-            for (int i = 1; i <= FIELD_COUNT; ++i)
+            for (int i = 0; i < FIELD_COUNT; ++i)
             {
-                FieldNames[i - 1] = string.Format("field-{0}", i);
+                FieldNames[i] = string.Format("field-{0}", i);
             }
         }
 
-        public static byte[] GetBytes()
+        public static byte[] GetPdf()
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -31,14 +35,15 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 
                     foreach (var fieldName in FieldNames)
                     {
-                        PdfPCell cell = new PdfPCell() { 
-                            HorizontalAlignment = Rectangle.ALIGN_RIGHT, 
+                        PdfPCell cell = new PdfPCell()
+                        {
+                            HorizontalAlignment = Rectangle.ALIGN_RIGHT,
                             Phrase = new Phrase(fieldName)
                         };
                         table.AddCell(cell);
-                        cell = new PdfPCell() 
+                        cell = new PdfPCell()
                         {
-                            CellEvent = new TestCellEvent(fieldName) 
+                            CellEvent = new TextFieldCellEvent(fieldName)
                         };
                         table.AddCell(cell);
                     }
@@ -49,33 +54,32 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
             }
         }
 
-        public void WriteToDisk()
-        {
-            File.WriteAllBytes(Helpers.IO.GetClassOutputPath(this), GetBytes());
-        }
-
-
-        public class TestCellEvent : IPdfPCellEvent
+        // creating the template's form fields
+        public class TextFieldCellEvent : IPdfPCellEvent
         {
             string _fieldName;
-            BaseFont _default = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.WINANSI, false);
+            BaseFont _defaultFont = BaseFont.CreateFont(
+                HELVETICA, BaseFont.WINANSI, false
+            );
 
-            public TestCellEvent(string fieldName) { _fieldName = fieldName; }
+            public TextFieldCellEvent(string fieldName) { _fieldName = fieldName; }
 
             public void CellLayout(PdfPCell cell, Rectangle rectangle, PdfContentByte[] canvases)
             {
                 PdfWriter writer = canvases[0].PdfWriter;
                 TextField text = new TextField(writer, rectangle, _fieldName);
 
-                switch (_fieldName.EndsWith("4"))
+                switch (!_fieldName.EndsWith(AUTO_SIZE_FIELD.ToString()))
                 {
                     case true:
-                        text.FontSize = 12f;
-                        text.Font = _default;
+                        text.FontSize = DEFAULT_SIZE;
+                        text.Font = _defaultFont;
                         break;
                     default:
                         text.FontSize = 0;
-                        text.Font = _default;
+                        text.Font = BaseFont.CreateFont(
+                            COURIER_OBLIQUE, BaseFont.WINANSI, false
+                        );
                         break;
                 }
 
@@ -85,5 +89,13 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
         }
 
 
+
+
+        #region kuujinbo
+        public void WriteToDisk()
+        {
+            File.WriteAllBytes(Helpers.IO.GetClassOutputPath(this), GetPdf());
+        }
+        #endregion
     }
 }

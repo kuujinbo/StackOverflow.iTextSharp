@@ -73,8 +73,9 @@
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_test\Forms\CheckboxFieldsPdf.cs" />
     <Compile Include="_test\Forms\TextBoxField.cs" />
-    <Compile Include="_test\Forms\TestPdfWithTextFields.cs" />
+    <Compile Include="_test\Forms\TextFieldsPdf.cs" />
     <Compile Include="_test\FoundAtSO\HighLightTextLocation.cs" />
     <Compile Include="_test\HightLightText.cs" />
   </ItemGroup>

@@ -126,12 +126,42 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
         }
 
 
+        public static bool IsMultiLine(AcroFields acroFields, string fieldName)
+        {
+ 		  var item = acroFields.Fields[fieldName];
+  		  var flags = item.GetMerged(0).GetAsNumber(PdfName.FF).IntValue;
+  		  return (flags & BaseField.MULTILINE) > 0;
+        }
 
 
-        public void FitText(AcroFields acroFields,
+
+        private void ValidateFitSingleLineText(AcroFields acroFields, string fieldName)
+        {
+            if (acroFields.GetFieldType(fieldName) != AcroFields.FIELD_TYPE_TEXT)
+            {
+                throw new InvalidOperationException(string.Format(
+                    "field [{0}] is not a TextField",
+                    fieldName
+                ));
+            }
+
+            if (IsMultiLine(acroFields, fieldName))
+            {
+                throw new InvalidOperationException(string.Format(
+                    "only single line TextField is allowed; field [{0}] is multiline.",
+                    fieldName
+                ));
+            }
+        }
+
+        // would be nice if we could use ColumnText, but there's no way to get **remaining** text:
+        // http://itext.2136553.n4.nabble.com/Remain-Text-on-ColumnText-td2146469.html
+        public void FitSingleLine(AcroFields acroFields,
             string toFit, string fieldName,
             out string fits, out string overflows)
         {
+            ValidateFitSingleLineText(acroFields, fieldName);
+
             var fieldWidth = acroFields.GetFieldPositions(fieldName)[0].position.Width;
             var fontSize = GetFontSize(acroFields, fieldName);
             var baseFont = GetStandardFont(acroFields, fieldName);
@@ -163,6 +193,14 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
 
 
         #region kuujinbo
+        // try to get max font size that fit in rectangle
+        public void VerticalFitSize(Rectangle rectangle, string text)
+        {
+            var baseFont = BaseFont.CreateFont();
+            int height = baseFont.GetAscent(text) - baseFont.GetDescent(text);
+            float size = 1000f * rectangle.Height / height;
+        }
+
         const string fileName = "datasheet.pdf";
         
         public void Go(float fontSize)
@@ -179,8 +217,11 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                         var fields = stamper.AcroFields;
                         SetTemplateFont(fields, fontSize);
 
-                        foreach (var name in TestPdfWithTextFields.FieldNames)
+                        //foreach (var name in TextFieldsCreator.FieldNames)
+                        foreach (var name in fields.Fields.Keys)
                         {
+                            Console.WriteLine("in Go(float fontSize), field name: {0}", name);
+
                             fields.SetField(name, name);
                         }
                     }
@@ -223,7 +264,7 @@ namespace kuujinbo.StackOverflow.iTextSharp._test.Forms
                         string over;
                         Console.WriteLine("TEST STRING: {0}\n", testJoined);
 
-                        FitText(fields, testJoined, "title", out fit, out over);
+                        FitSingleLine(fields, testJoined, "title", out fit, out over);
                         Console.WriteLine("fit: {0}\n", fit);
                         Console.WriteLine("over: {0}\n", over);
 
