@@ -8,6 +8,8 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.parser;
 
+// found here:
+// http://stackoverflow.com/questions/35170016
 namespace kuujinbo.StackOverflow.iTextSharp._test.FoundAtSO
 {
     public class HighLightTextLocation : ITextExtractionStrategy
