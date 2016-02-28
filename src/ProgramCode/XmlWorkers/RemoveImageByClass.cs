@@ -13,7 +13,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
         const string HTML = @"
 <div>
     <div>
-        <img src='somepath/desktop.jpg' class='img-desktop'>Desktop</img>
+        <img src='somepath/desktop.jpg' class='img-desktop'>Desktop</img><hr>
         <img src='somepath/mobile.jpg' class='img-mobile'>Mobile</img>
     </div>
 </div>
@@ -42,6 +42,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
         {
             var outputFile = Helpers.IO.GetClassOutputPath(this);
             var parsedHtml = RemoveImage(HTML);
+            Console.WriteLine(parsedHtml);
 
             using (var xmlSnippet = new StringReader(parsedHtml))
             {

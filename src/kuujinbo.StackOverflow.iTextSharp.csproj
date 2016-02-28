@@ -65,11 +65,13 @@
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
     <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
     <Compile Include="ProgramCode\Fonts\ChineseSetSplitCharacter.cs" />
+    <Compile Include="ProgramCode\Forms\StickyNotes.cs" />
     <Compile Include="ProgramCode\Forms\UsageRightsCheckbox.cs" />
     <Compile Include="ProgramCode\Images\AddBase64Image.cs" />
     <Compile Include="ProgramCode\Images\WrapText.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
+    <Compile Include="ProgramCode\XmlWorkers\ImageHandler.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="_test\Forms\TextFieldsPdf.cs" />
     <Compile Include="_test\FoundAtSO\HighLightTextLocation.cs" />
     <Compile Include="_test\HightLightText.cs" />
+    <Compile Include="_test\HtmlClean.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -91,7 +94,6 @@
   <ItemGroup>
     <Content Include="AsianFonts\iTextAsian.dll" />
     <Content Include="PowerShell\__READ-ME.txt" />
-    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

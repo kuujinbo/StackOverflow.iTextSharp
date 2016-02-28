@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kuujinbo.StackOverflow.iTextSharp", "kuujinbo.StackOverflow.iTextSharp.csproj", "{2D6B4D37-7071-4DAF-9E1A-5EFD590FC031}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kuujinbo.StackOverflow.iTextSharp", "src\kuujinbo.StackOverflow.iTextSharp.csproj", "{2D6B4D37-7071-4DAF-9E1A-5EFD590FC031}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D54F03E2-ED2C-4D0F-9AA7-3140ADA8E1EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +20,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D6B4D37-7071-4DAF-9E1A-5EFD590FC031} = {D54F03E2-ED2C-4D0F-9AA7-3140ADA8E1EE}
 	EndGlobalSection
 EndGlobal

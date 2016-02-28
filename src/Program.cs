@@ -16,7 +16,8 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new CheckboxFieldsPdf().WriteToDisk();
+            new StickyNotes().Go();
+            // new CheckboxFieldsPdf().WriteToDisk();
             // new TextBoxField().Go();
             // new TextBoxField().Go(8f);
             // new TestPdfWithTextFields().WriteToDisk();
