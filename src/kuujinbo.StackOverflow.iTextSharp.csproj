@@ -63,6 +63,7 @@
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
+    <Compile Include="ProgramCode\ClosedStream.cs" />
     <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
     <Compile Include="ProgramCode\Fonts\ChineseSetSplitCharacter.cs" />
     <Compile Include="ProgramCode\Forms\StickyNotes.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="ProgramCode\Images\WrapText.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
+    <Compile Include="ProgramCode\XmlWorkers\HtmlNonBreakingSpace.cs" />
     <Compile Include="ProgramCode\XmlWorkers\ImageHandler.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />

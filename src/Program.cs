@@ -16,13 +16,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new StickyNotes().Go();
-            // new CheckboxFieldsPdf().WriteToDisk();
-            // new TextBoxField().Go();
-            // new TextBoxField().Go(8f);
-            // new TestPdfWithTextFields().WriteToDisk();
-            // new WrapText().Go();
-            // new RemoveImageByClass().Go();
+            new HtmlNonBreakingSpace().Go();
         }
 
         static void ReduceFontCreatePDF()
