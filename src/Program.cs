@@ -16,7 +16,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new HtmlNonBreakingSpace().Go();
+            new QuarterPages().Go();
         }
 
         static void ReduceFontCreatePDF()

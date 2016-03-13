@@ -71,6 +71,7 @@
     <Compile Include="ProgramCode\Images\AddBase64Image.cs" />
     <Compile Include="ProgramCode\Images\WrapText.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
+    <Compile Include="ProgramCode\QuarterPages.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
     <Compile Include="ProgramCode\XmlWorkers\HtmlNonBreakingSpace.cs" />
     <Compile Include="ProgramCode\XmlWorkers\ImageHandler.cs" />
