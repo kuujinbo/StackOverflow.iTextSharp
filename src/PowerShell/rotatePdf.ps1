@@ -30,11 +30,11 @@ function Rotate-Pdf {
     )
     $reader = New-Object iTextSharp.text.pdf.PdfReader($readerPath);
     $rotate = New-Object iTextSharp.text.pdf.PdfName('Rotate');
+    $pdfNumber = New-Object iTextSharp.text.pdf.PdfNumber($degrees);
     $pageCount = $reader.NumberOfPages;
     for ($i = 1; $i -le $pageCount; $i++) {
         # $rotation = $reader.GetPageRotation($i);
         $pageDict = $reader.GetPageN($i);
-        $pdfNumber = New-Object iTextSharp.text.pdf.PdfNumber($degrees);
         $pageDict.Put($rotate, $pdfNumber);
     }
     $memoryStream = New-Object System.IO.MemoryStream;
