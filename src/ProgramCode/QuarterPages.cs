@@ -17,7 +17,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode
         {
             using (var stream = new MemoryStream())
             {
-                using (var document = new Document(PageSize.A6))
+                using (var document = new Document())
                 {
                     PdfWriter.GetInstance(document, stream);
                     document.Open();

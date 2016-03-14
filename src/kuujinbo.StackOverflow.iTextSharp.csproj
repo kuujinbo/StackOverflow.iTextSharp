@@ -88,6 +88,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="PowerShell\rotatePdf.ps1" />
     <None Include="PowerShell\mergePdfs.ps1" />
   </ItemGroup>
   <ItemGroup>
