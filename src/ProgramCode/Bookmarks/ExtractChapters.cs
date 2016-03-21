@@ -18,6 +18,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks
         public void Go()
         {
             DumpResults(input);
+            BookMark.ResetNumber();
             ProcessPdf(input);
         }
 
@@ -86,7 +87,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks
                     string range = string.Format("{0}-{1}", page, nextPage);
 
                     // DEMO!
-                    if (i < 10)
+                    if (i < 1000)
                     {
                         var outputPath = Path.Combine(OUTPUT_DIR, bookmarks[i].GetFileName());
                         using (var readerCopy = new PdfReader(reader))
@@ -141,7 +142,6 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks
                     }
                 }
             }
-            BookMark.ResetNumber();
             return result;
         }
 
