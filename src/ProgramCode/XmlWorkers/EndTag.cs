@@ -52,7 +52,27 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
         {
             var outputFile = Helpers.IO.GetClassOutputPath(this);
             var fixedHtml = FixBrokenServerControlMarkup(HTML);
+            using (FileStream stream = new FileStream(
+                outputFile,
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                using (var document = new Document())
+                {
+                    PdfWriter writer = PdfWriter.GetInstance(
+                        document, stream
+                    );
+                    document.Open();
+                    using (var xmlSnippet = new StringReader(fixedHtml))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(
+                            writer, document, xmlSnippet
+                        );
+                    }
 
+                }
+            }
+/*
             using (var xmlSnippet = new StringReader(fixedHtml))
             {
                 using (FileStream stream = new FileStream(
@@ -72,6 +92,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
                     }
                 }
             }
+ */
         }
     }
 }

@@ -3,7 +3,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/35959487
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode
+namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Tables
 {
     public class QuarterPages
     {

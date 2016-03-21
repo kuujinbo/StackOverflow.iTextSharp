@@ -62,6 +62,8 @@
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="Program.cs" />
+    <None Include="ProgramCode\Bookmarks\ExtractChapters - Copy.cs.ignore" />
+    <Compile Include="ProgramCode\Bookmarks\ExtractChapters.cs" />
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
     <Compile Include="ProgramCode\ClosedStream.cs" />
     <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
@@ -71,7 +73,7 @@
     <Compile Include="ProgramCode\Images\AddBase64Image.cs" />
     <Compile Include="ProgramCode\Images\WrapText.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
-    <Compile Include="ProgramCode\QuarterPages.cs" />
+    <Compile Include="ProgramCode\Tables\QuarterPages.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
     <Compile Include="ProgramCode\XmlWorkers\HtmlNonBreakingSpace.cs" />
     <Compile Include="ProgramCode\XmlWorkers\ImageHandler.cs" />

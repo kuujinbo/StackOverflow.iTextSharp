@@ -2,6 +2,7 @@
 using kuujinbo.StackOverflow.iTextSharp._test.Forms;
 using kuujinbo.StackOverflow.iTextSharp.Helpers;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.ColumnTexts;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Fonts;
@@ -16,7 +17,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new QuarterPages().Go();
+            new ExtractChapters().Go();
         }
 
         static void ReduceFontCreatePDF()
