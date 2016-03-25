@@ -40,12 +40,12 @@
     <Reference Include="iTextAsian">
       <HintPath>bin\iTextAsian.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>packages\iTextSharp.5.5.8\lib\itextsharp.dll</HintPath>
+    <Reference Include="itextsharp, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.9\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="itextsharp.xmlworker, Version=5.5.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>packages\itextsharp.xmlworker.5.5.8\lib\itextsharp.xmlworker.dll</HintPath>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.9.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.9\lib\itextsharp.xmlworker.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -63,6 +63,7 @@
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="Program.cs" />
     <None Include="ProgramCode\Bookmarks\ExtractChapters - Copy.cs.ignore" />
+    <Compile Include="ProgramCode\Barcodes\TableLayout.cs" />
     <Compile Include="ProgramCode\Bookmarks\ExtractChapters.cs" />
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
     <Compile Include="ProgramCode\ClosedStream.cs" />
@@ -74,9 +75,9 @@
     <Compile Include="ProgramCode\Images\WrapText.cs" />
     <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
     <Compile Include="ProgramCode\Tables\QuarterPages.cs" />
+    <Compile Include="ProgramCode\XmlWorkers\CustomTdProcessor.cs" />
     <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
     <Compile Include="ProgramCode\XmlWorkers\HtmlNonBreakingSpace.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\ImageHandler.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
     <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

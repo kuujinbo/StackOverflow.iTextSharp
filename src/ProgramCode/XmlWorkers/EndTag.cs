@@ -72,27 +72,6 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
 
                 }
             }
-/*
-            using (var xmlSnippet = new StringReader(fixedHtml))
-            {
-                using (FileStream stream = new FileStream(
-                    outputFile,
-                    FileMode.Create,
-                    FileAccess.Write))
-                {
-                    using (var document = new Document())
-                    {
-                        PdfWriter writer = PdfWriter.GetInstance(
-                          document, stream
-                        );
-                        document.Open();
-                        XMLWorkerHelper.GetInstance().ParseXHtml(
-                          writer, document, xmlSnippet
-                        );
-                    }
-                }
-            }
- */
         }
     }
 }

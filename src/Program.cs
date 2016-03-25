@@ -2,6 +2,7 @@
 using kuujinbo.StackOverflow.iTextSharp._test.Forms;
 using kuujinbo.StackOverflow.iTextSharp.Helpers;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Barcodes;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.ColumnTexts;
@@ -17,7 +18,8 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new ExtractChapters().Go();
+            new CustomTdProcessor().Go();
+            new TableLayout().Go();
         }
 
         static void ReduceFontCreatePDF()
