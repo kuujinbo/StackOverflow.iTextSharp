@@ -10,6 +10,7 @@ using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Fonts;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Forms;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass;
+using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Tables;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers;
 
 namespace kuujinbo.StackOverflow.iTextSharp
@@ -18,13 +19,15 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new CustomTdProcessor().Go();
+            new QuarterPages().CreatePdf();
+            //new BestFit().Go();
+            // new CustomTdProcessor().Go();
             // new TableLayout().Go();
         }
 
         static void ReduceFontCreatePDF()
         {
-            new ReduceFont().CreatePDF(50);
+            // new ReduceFont().CreatePDF(50);
             int fontStart = 50;
             var r = new ReduceFont();
             while (r.CreatePDF(fontStart))

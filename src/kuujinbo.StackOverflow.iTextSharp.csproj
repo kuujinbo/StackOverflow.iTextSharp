@@ -68,6 +68,7 @@
     <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
     <Compile Include="ProgramCode\ClosedStream.cs" />
     <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
+    <Compile Include="ProgramCode\Fonts\BestFit.cs" />
     <Compile Include="ProgramCode\Fonts\ChineseSetSplitCharacter.cs" />
     <Compile Include="ProgramCode\Forms\StickyNotes.cs" />
     <Compile Include="ProgramCode\Forms\UsageRightsCheckbox.cs" />
