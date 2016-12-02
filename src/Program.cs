@@ -19,7 +19,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new QuarterPages().CreatePdf();
+            new CustomHrProcessor().Go();
             //new BestFit().Go();
             // new CustomTdProcessor().Go();
             // new TableLayout().Go();
