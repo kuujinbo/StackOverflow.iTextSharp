@@ -13,16 +13,15 @@ using kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.Tables;
 using kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers;
 
+using kuujinbo.StackOverflow.iTextSharp.iText7.Element;
+
 namespace kuujinbo.StackOverflow.iTextSharp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            new CustomHrProcessor().Go();
-            //new BestFit().Go();
-            // new CustomTdProcessor().Go();
-            // new TableLayout().Go();
+            new TrimmedParagraph().Go();
         }
 
         static void ReduceFontCreatePDF()
