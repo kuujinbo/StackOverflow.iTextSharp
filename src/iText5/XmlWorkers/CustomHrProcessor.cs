@@ -14,7 +14,7 @@ using iTextSharp.tool.xml.pipeline.end;
 using iTextSharp.tool.xml.pipeline.html;
 
 // http://stackoverflow.com/questions/40802883
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 {
     public class CustomHorizontalRule : AbstractTagProcessor
     {

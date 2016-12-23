@@ -6,7 +6,7 @@ using iTextSharp.tool.xml;
 using HtmlAgilityPack;
 
 // http://stackoverflow.com/questions/35216731 - PART 1
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 {
     public class RemoveImageByClass
     {

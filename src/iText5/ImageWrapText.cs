@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
-    public class WrapText
+    public class ImageWrapText
     {
         public void Go()
         {

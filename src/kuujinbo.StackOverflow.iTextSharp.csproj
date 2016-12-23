@@ -90,27 +90,22 @@
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="iText7\Element\TrimmedParagraph.cs" />
+    <Compile Include="iText5\PageEventHeader.cs" />
     <Compile Include="Program.cs" />
-    <None Include="ProgramCode\Bookmarks\ExtractChapters - Copy.cs.ignore" />
-    <Compile Include="ProgramCode\Barcodes\TableLayout.cs" />
-    <Compile Include="ProgramCode\Bookmarks\ExtractChapters.cs" />
-    <Compile Include="ProgramCode\Chunks\SetSplitCharacter.cs" />
-    <Compile Include="ProgramCode\ClosedStream.cs" />
-    <Compile Include="ProgramCode\ColumnTexts\EveryOther.cs" />
-    <Compile Include="ProgramCode\Fonts\BestFit.cs" />
-    <Compile Include="ProgramCode\Fonts\ChineseSetSplitCharacter.cs" />
-    <Compile Include="ProgramCode\Forms\StickyNotes.cs" />
-    <Compile Include="ProgramCode\Forms\UsageRightsCheckbox.cs" />
-    <Compile Include="ProgramCode\Images\AddBase64Image.cs" />
-    <Compile Include="ProgramCode\Images\WrapText.cs" />
-    <Compile Include="ProgramCode\MultiPass\ReduceFont.cs" />
-    <Compile Include="ProgramCode\Tables\QuarterPages.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\CustomHrProcessor.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\CustomTdProcessor.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\EndTag.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\HtmlNonBreakingSpace.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClass.cs" />
-    <Compile Include="ProgramCode\XmlWorkers\RemoveImageByClassRegex.cs" />
+    <Compile Include="iText5\BookmarkExtractChapters.cs" />
+    <Compile Include="iText5\ChunkSetSplitCharacter.cs" />
+    <Compile Include="iText5\ClosedStream.cs" />
+    <Compile Include="iText5\ColumnTextEveryOther.cs" />
+    <Compile Include="iText5\ImageAddBase64Image.cs" />
+    <Compile Include="iText5\ImageWrapText.cs" />
+    <Compile Include="iText5\MultiPassReduceFont.cs" />
+    <Compile Include="iText5\TableQuarterPages.cs" />
+    <Compile Include="iText5\XmlWorkers\CustomHrProcessor.cs" />
+    <Compile Include="iText5\XmlWorkers\CustomTdProcessor.cs" />
+    <Compile Include="iText5\XmlWorkers\EndTag.cs" />
+    <Compile Include="iText5\XmlWorkers\HtmlNonBreakingSpace.cs" />
+    <Compile Include="iText5\XmlWorkers\RemoveImageByClass.cs" />
+    <Compile Include="iText5\XmlWorkers\RemoveImageByClassRegex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="_test\Forms\CheckboxFieldsPdf.cs" />
     <Compile Include="_test\Forms\TextBoxField.cs" />
@@ -126,6 +121,7 @@
     <None Include="PowerShell\mergePdfs.ps1" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ProgramCode\" />
     <Folder Include="__INPUT\" />
     <Folder Include="__OUTPUT\" />
   </ItemGroup>

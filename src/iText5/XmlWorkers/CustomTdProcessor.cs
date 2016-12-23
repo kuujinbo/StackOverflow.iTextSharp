@@ -12,7 +12,7 @@ using iTextSharp.tool.xml.pipeline.end;
 using iTextSharp.tool.xml.pipeline.html;
 
 // http://stackoverflow.com/questions/36180131
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 {
     public class TableDataProcessor : TableData
     {

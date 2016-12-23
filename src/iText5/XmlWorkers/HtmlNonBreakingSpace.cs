@@ -4,7 +4,7 @@ using iTextSharp.text.pdf;
 using iTextSharp.tool.xml;
 
 // http://stackoverflow.com/questions/35874932
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 {
     public class HtmlNonBreakingSpace
     {

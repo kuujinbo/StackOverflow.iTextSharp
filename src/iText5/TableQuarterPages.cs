@@ -3,12 +3,12 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/35959487
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Tables
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
-    public class QuarterPages
+    public class TableQuarterPages
     {
         public static string outputFile;
-        public QuarterPages()
+        public TableQuarterPages()
         {
             outputFile = Helpers.IO.GetClassOutputPath(this);
         }

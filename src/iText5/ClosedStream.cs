@@ -4,7 +4,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/35733224
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
     public class ClosedStream
     {

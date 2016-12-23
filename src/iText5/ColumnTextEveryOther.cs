@@ -5,9 +5,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/33653460
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.ColumnTexts
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
-    public class EveryOther
+    public class ColumnTextEveryOther
     {
         public void Go()
         {

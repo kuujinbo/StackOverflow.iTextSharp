@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 
 // http://stackoverflow.com/questions/35216731 - PART 2
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.XmlWorkers
+namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 {
     public class RemoveImageByClassRegex
     {

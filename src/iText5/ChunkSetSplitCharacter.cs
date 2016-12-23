@@ -4,7 +4,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/34765444
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
     public class CustomSplitCharacter : ISplitCharacter
     {
@@ -20,7 +20,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Chunks
         }
     }
 
-    public class SetSplitCharacter
+    public class ChunkSetSplitCharacter
     {
         public void Go()
         {

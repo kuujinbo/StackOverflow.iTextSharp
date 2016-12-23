@@ -6,9 +6,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/30241333
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
-    public class AddBase64Image
+    public class ImageAddBase64Image
     {
         public const string NAME = "lname";
         byte[] GetTestReader()
@@ -76,7 +76,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Images
         {
             PdfWriter writer = canvases[0].PdfWriter;
             TextField text = new TextField(
-                writer, rectangle, FieldName ?? AddBase64Image.NAME
+                writer, rectangle, FieldName ?? ImageAddBase64Image.NAME
             );
             PdfFormField field = text.GetTextField();
             writer.AddAnnotation(field);

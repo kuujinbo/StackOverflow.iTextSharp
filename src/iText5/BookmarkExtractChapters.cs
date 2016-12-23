@@ -7,9 +7,9 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 
 // http://stackoverflow.com/questions/36102526
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.Bookmarks
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
-    public class ExtractChapters
+    public class BookmarkExtractChapters
     {
         static string OUTPUT_DIR = Helpers.IO.OutputDirectory();
         static string outputTextFile = Helpers.IO.GetOutputPath("bookmarks.txt");

@@ -3,7 +3,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass
+namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
     /*
      * http://stackoverflow.com/questions/34276668/
@@ -21,7 +21,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.ProgramCode.MultiPass
      * "CreatePDF" method again....
      * </quote>
      */
-    public class ReduceFont
+    public class MultiPassReduceFont
     {
         const string TEST_STRING = @"
 if the document spans more than one page i reduce the Font and call the 
@@ -62,6 +62,4 @@ if the document spans more than one page i reduce the Font and call the
             TotalPages = writer.PageNumber;
         }
     }
-
-
 }
