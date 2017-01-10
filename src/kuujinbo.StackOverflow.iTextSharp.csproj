@@ -89,6 +89,7 @@
     <Compile Include="Helpers\FormInfo.cs" />
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
+    <Compile Include="iText5\TableLoop.cs" />
     <Compile Include="iText5\XfaFormFill.cs" />
     <Compile Include="iText7\Element\TrimmedParagraph.cs" />
     <Compile Include="iText5\PageEventHeader.cs" />

@@ -9,7 +9,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new XfaFormFill().Go();
+            new TableLoop().Go();
             // ReduceFontCreatePDF();
         }
 
