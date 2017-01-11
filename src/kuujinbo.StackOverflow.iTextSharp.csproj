@@ -90,7 +90,10 @@
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="iText5\TableLoop.cs" />
+    <Compile Include="iText5\TableRowSplit.cs" />
     <Compile Include="iText5\XfaFormFill.cs" />
+    <Compile Include="iText5\XmlWorkers\KeepDivTogether.cs" />
+    <Compile Include="iText5\XmlWorkers\TableNoRowSplit.cs" />
     <Compile Include="iText7\Element\TrimmedParagraph.cs" />
     <Compile Include="iText5\PageEventHeader.cs" />
     <Compile Include="Program.cs" />
