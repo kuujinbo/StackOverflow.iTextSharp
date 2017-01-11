@@ -42,7 +42,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 
             // overriden implementation uses a custom HTML attribute to keep:
             // <tr> together - see TableProcessor
-            html.Append("<table no-row-split style='page-break-inside:avoid;'>");
+            html.Append("<table no-row-split>");
             for (int i = 0; i < repeatCount; ++i)
             {
                 html.AppendFormat(
@@ -57,7 +57,6 @@ namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 
         public void Go()
         {
-
             using (var stream = new FileStream(OUTPUT_FILE, FileMode.Create))
             {
                 using (var document = new Document())
