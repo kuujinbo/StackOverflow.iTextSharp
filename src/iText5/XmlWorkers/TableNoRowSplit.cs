@@ -42,7 +42,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.iText5.XmlWorkers
 
             // overriden implementation uses a custom HTML attribute to keep:
             // <tr> together - see TableProcessor
-            html.Append("<table no-row-split>");
+            html.AppendFormat("<table {0}>", TableProcessor.NO_ROW_SPLIT);
             for (int i = 0; i < repeatCount; ++i)
             {
                 html.AppendFormat(
