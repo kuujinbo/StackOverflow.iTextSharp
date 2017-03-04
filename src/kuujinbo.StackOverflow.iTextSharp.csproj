@@ -78,6 +78,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +95,7 @@
     <Compile Include="iText5\XfaFormFill.cs" />
     <Compile Include="iText5\XmlWorkers\KeepDivTogether.cs" />
     <Compile Include="iText5\XmlWorkers\TableNoRowSplit.cs" />
+    <Compile Include="iText5\XmlWorkers\TextOrBrokenHtml.cs" />
     <Compile Include="iText7\Element\TrimmedParagraph.cs" />
     <Compile Include="iText5\PageEventHeader.cs" />
     <Compile Include="Program.cs" />
@@ -127,12 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ProgramCode\" />
-    <Folder Include="__INPUT\" />
     <Folder Include="__OUTPUT\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AsianFonts\iTextAsian.dll" />
     <Content Include="PowerShell\__READ-ME.txt" />
+    <Content Include="__INPUT\TextOrBrokenHtml.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

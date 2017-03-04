@@ -9,8 +9,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new TableNoRowSplit().Go();
-            new KeepDivTogether().Go();
+            new TextOrBrokenHtml().Go();
             // ReduceFontCreatePDF();
         }
 
