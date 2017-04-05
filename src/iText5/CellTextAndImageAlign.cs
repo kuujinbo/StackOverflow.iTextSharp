@@ -7,7 +7,7 @@ using iTextSharp.text.pdf;
 namespace kuujinbo.StackOverflow.iTextSharp.iText5
 {
 
-    public class LowerRightImage : IPdfPCellEvent
+    public class BottomRightImage : IPdfPCellEvent
     {
         public Image Image { get; set; }
 
@@ -50,7 +50,7 @@ namespace kuujinbo.StackOverflow.iTextSharp.iText5
 
                     var image = Image.GetInstance(imagePath);
                     image.ScaleAbsolute(40, 40);
-                    var cellEvent = new LowerRightImage() { Image = image };
+                    var cellEvent = new BottomRightImage() { Image = image };
 
                     var testString =
             @"first name: {0}
