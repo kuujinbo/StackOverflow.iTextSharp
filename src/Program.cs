@@ -9,7 +9,8 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new TableHeaderAutofit().Go();
+            new JustifyCell().Go();
+            new CellTextAndImageAlign().Go();
             // ReduceFontCreatePDF();
         }
 

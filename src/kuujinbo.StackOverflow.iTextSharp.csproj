@@ -90,11 +90,14 @@
     <Compile Include="Helpers\FormInfo.cs" />
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
+    <Compile Include="iText5\CellTextAndImageAlign.cs" />
     <Compile Include="iText5\TableHeaderAutofit.cs" />
     <Compile Include="iText5\TableLoop.cs" />
     <Compile Include="iText5\TableRowSplit.cs" />
     <Compile Include="iText5\XfaFormFill.cs" />
+    <Compile Include="iText5\XmlWorkers\JustifyCell.cs" />
     <Compile Include="iText5\XmlWorkers\KeepDivTogether.cs" />
+    <Compile Include="iText5\XmlWorkers\SupTag.cs" />
     <Compile Include="iText5\XmlWorkers\TableNoRowSplit.cs" />
     <Compile Include="iText5\XmlWorkers\TextOrBrokenHtml.cs" />
     <Compile Include="iText7\Element\TrimmedParagraph.cs" />
