@@ -9,7 +9,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new Hyphens().Go();
+            new MalformedHtml().Go();
             // ReduceFontCreatePDF();
         }
 
