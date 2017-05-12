@@ -91,6 +91,7 @@
     <Compile Include="Helpers\IO.cs" />
     <Compile Include="Helpers\Misc.cs" />
     <Compile Include="iText5\CellTextAndImageAlign.cs" />
+    <Compile Include="iText5\Hyphens.cs" />
     <Compile Include="iText5\TableHeaderAutofit.cs" />
     <Compile Include="iText5\TableLoop.cs" />
     <Compile Include="iText5\TableRowSplit.cs" />

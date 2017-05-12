@@ -9,8 +9,7 @@ namespace kuujinbo.StackOverflow.iTextSharp
     {
         static void Main(string[] args)
         {
-            new JustifyCell().Go();
-            new CellTextAndImageAlign().Go();
+            new Hyphens().Go();
             // ReduceFontCreatePDF();
         }
 
